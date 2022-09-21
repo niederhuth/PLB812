@@ -19,7 +19,7 @@ export LD_LIBRARY_PATH="${HOME}/miniconda3/envs/plb812/lib:${LD_LIBRARY_PATH}"
 sra_list="SRR401413 SRR401414 SRR401415"
 
 #Use a for loop to go over each file and download it.
-for i in ${sra_list}
+for sra in ${sra_list}
 do
 	#Use prefetch from the SRA toolkit to get the SRA file
 	prefetch --max-size 100000000 ${sra}
