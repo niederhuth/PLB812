@@ -14,7 +14,7 @@ In this assignment, you will use fastqc to assess the quality of your assigned R
 
 ## 2. Methods  
 
-1. __Briefly__ describe the methods you used to download and convert the files for sections #1 & #2 in a text file named "methods.txt". __Be sure to list the accessions for the downloaded datasets.__  
-2. Place methods.txt in PLB812/lab_assignments/assignment1  
+1. __Briefly__ describe the methods you used to download and convert the files for sections #1 in a text file named "methods.txt". 
+2. Place methods.txt in PLB812/lab_assignments/assignment2  
 3. Push your PLB812 repository to github.
 
