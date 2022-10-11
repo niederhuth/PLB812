@@ -78,9 +78,11 @@ makeResultsTable <- function(x,compFactor,conditionA,conditionB,lfcThreshold=0,f
 res <- makeResultsTable(dds,"genotype","WT","h3h3",lfcThreshold=0,filter=TRUE)
 head(res)
 #Create a column where 1 = meets cutoff, 0 = does not meet cutoff
-res$sig <- ifelse(res$padj < 0.05 & res$log2FC >= 1 | res$padj < 0.05 & res$log2FC <= -1, 1, 0)
+res$sig <- ifelse(res$padj < 0.05 & res$log2FC >= 1 & !is.na(res$padj) | res$padj < 0.05 & res$log2FC <= -1 & !is.na(res$padj) , "DE", "notDE")
 head(res)
 table(res$sig)
+#Make the plot
+ggplot(res) + geom_point(aes(x=log2(baseMeanA),y=log2(baseMeanB),color=sig))
 #Plot counts for the PGAZAT gene
 plotCounts(dds, gene="AT2G41850", intgroup="genotype")
 #Return the data table
