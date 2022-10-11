@@ -30,4 +30,14 @@ dds$sizeFactor
 dds <- estimateDispersions(dds)
 #Plot out the dispersions
 plotDispEsts(dds)
+#Call DE genes using the Wald Test
+dds <- nbinomWaldTest(dds)
+#Extract results for a pair-wise contrast
+resultsTable <- as.data.frame(results(dds, contrast=c("genotype","WT","h3h3")))
+#Show how many genes padj < 0.05
+nrow(na.omit(resultsTable[resultsTable$padj < 0.05,]))
+#Genes with 2-fold change or log2FC = 1
+nrow(na.omit(resultsTable[resultsTable$padj < 0.05 & resultsTable$log2FoldChange >= 1,]))
+
+
 
