@@ -1,4 +1,4 @@
-# Lab 5: Aligning Whole Genome Sequencing Data data
+# Lab 7: Aligning Whole Genome Sequencing Data data
 
 In this assignment, you will download, trim, and align WGS data
 
